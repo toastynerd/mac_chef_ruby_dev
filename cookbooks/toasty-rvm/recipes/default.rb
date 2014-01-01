@@ -7,13 +7,9 @@
 # All rights reserved - Do Not Redistribute
 #
 
-remote_file "#{Chef::Config[:file_cache_path]}/rvm-installer" do
-  source "https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer"
-  notifies :run, "execute[run rvm installer]", :immediately
-end
-
 execute "run rvm installer" do
-  command "#{Chef::Config[:file_cache_path]}/rvm-installer -s stable"
+  command "curl -sSL https://get.rvm.io | bash"
+  user 'toasty'
   notifies :run, "execute[update bash profile]", :immediately
 end
 
