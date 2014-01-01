@@ -13,7 +13,7 @@ remote_file "#{Chef::Config[:file_cache_path]}/rvm-installer" do
 end
 
 execute "run rvm installer" do
-  command "./#{Chef::Config[:file_cache_path]}/rvm-installer -s stable"
+  command "#{Chef::Config[:file_cache_path]}/rvm-installer -s stable"
   notifies :run, "execute[update bash profile]", :immediately
 end
 
