@@ -9,3 +9,5 @@ chef_server_url          "https://api.opscode.com/organizations/tm8311"
 cache_type               'BasicFile'
 cache_options( :path => "#{ENV['HOME']}/.chef/checksums" )
 cookbook_path            ["#{current_dir}/../cookbooks"]
+cookbook_email           "tylermorgan86@gmail.com"
+cookbook_copyright       "Tyler Morgan"
